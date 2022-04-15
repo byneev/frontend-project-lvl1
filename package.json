@@ -1,0 +1,19 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/byneev/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/byneev/frontend-project-lvl1/actions)",
+  "main": "brain-games.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byneev/frontend-project-lvl1.git"
+  },
+  "author": "Byneev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byneev/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/byneev/frontend-project-lvl1#readme"
+}

@@ -2,4 +2,4 @@
 
 import { getEvenCorrectAnswer, getEvenQuestion, playGame } from '../src/cli.js';
 
-playGame('if even - yes', getEvenQuestion, getEvenCorrectAnswer);
+playGame('Answer "yes" if the number is even, otherwise answer "no".', getEvenQuestion, getEvenCorrectAnswer);

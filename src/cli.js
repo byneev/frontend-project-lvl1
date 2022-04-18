@@ -23,7 +23,7 @@ export const initGame = (rules) => {
 
 export const getUserAnswer = (question) => readlineSync.question(`Question: ${question}\nYour answer: `);
 
-export const getEvenQuestion = () => Math.ceil(Math.random() * 100);
+export const getEvenQuestion = () => Math.ceil(Math.random() * 10);
 
 export const getCalcQuestion = () => {
   const array = ['+', '-', '/', '*'];
@@ -31,19 +31,19 @@ export const getCalcQuestion = () => {
   return `${getEvenQuestion()} ${operator} ${getEvenQuestion()}`;
 };
 
-export const getEvenCorrectAnswer = (input) => (input % 2 ? 'yes' : 'no');
+export const getEvenCorrectAnswer = (input) => (input % 2 ? 'no' : 'yes');
 
 export const getCalcCorrectAnswer = (input) => {
   const [a, operator, b] = input.split(' ');
   switch (operator) {
     case '+':
-      return +a + +b;
+      return String(+a + +b);
     case '-':
-      return +a - +b;
+      return String(+a - +b);
     case '/':
-      return +a / +b;
+      return String(Math.ceil(+a / +b));
     case '*':
-      return +a * +b;
+      return String(+a * +b);
     default:
       return NaN;
   }

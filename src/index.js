@@ -33,6 +33,22 @@ export const getCalcQuestion = () => {
 
 export const getGCDQuestion = () => `${Math.ceil(Math.random() * 10)} ${Math.ceil(Math.random() * 10)}`;
 
+export const getProgressionQuestion = () => {
+  let start = Math.ceil(Math.random() * 20);
+  const delta = Math.ceil(Math.random() * 7);
+  const empty = Math.ceil(Math.random() * 10);
+  const array = [];
+  for (let i = 1; i <= 10; i += 1) {
+    if (i === empty) {
+      array.push('..');
+    } else {
+      array.push(start);
+    }
+    start += delta;
+  }
+  return array.join(' ');
+};
+
 export const getEvenCorrectAnswer = (input) => (input % 2 ? 'no' : 'yes');
 
 export const getCalcCorrectAnswer = (input) => {
@@ -61,6 +77,24 @@ export const getGCDCorrectAnswer = (input) => {
     }
   }
   return String(+a + +b);
+};
+
+export const getProgressionCorrectAnswer = (input) => {
+  const array = input.split(' ');
+  const delta = Math.abs(+array[parseInt(array.length / 2, 10)]
+    - +array[parseInt(array.length / 2 - 1, 10)]);
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === '..') {
+      if (i === 0) {
+        return String(+array[1] - delta);
+      }
+      if (i === array.length - 1) {
+        return String(+array[i - 2] + delta);
+      }
+      return String((+array[i - 1] + +array[i + 1]) / 2);
+    }
+  }
+  return 0;
 };
 
 export const gameAttempt = (value, getCorrectAnswer) => {

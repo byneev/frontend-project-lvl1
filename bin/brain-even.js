@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import {
   checkIsEven, checkUserAnswer, generateRandomNumber, getUserAnswer, getUserName,
 } from '../src/cli.js';
@@ -14,7 +16,7 @@ while (count !== 3) {
     console.log('Correct!');
     count += 1;
   } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkIsEven(num)}'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkIsEven(num) ? 'yes' : 'no'}'.`);
     console.log(`Let's try again, ${userName}!`);
     break;
   }

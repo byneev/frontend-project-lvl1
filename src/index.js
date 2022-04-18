@@ -31,6 +31,8 @@ export const getCalcQuestion = () => {
   return `${getEvenQuestion()} ${operator} ${getEvenQuestion()}`;
 };
 
+export const getGCDQuestion = () => `${Math.ceil(Math.random() * 10)} ${Math.ceil(Math.random() * 10)}`;
+
 export const getEvenCorrectAnswer = (input) => (input % 2 ? 'no' : 'yes');
 
 export const getCalcCorrectAnswer = (input) => {
@@ -47,6 +49,18 @@ export const getCalcCorrectAnswer = (input) => {
     default:
       return NaN;
   }
+};
+
+export const getGCDCorrectAnswer = (input) => {
+  let [a, b] = input.split(' ');
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+  return String(+a + +b);
 };
 
 export const gameAttempt = (value, getCorrectAnswer) => {

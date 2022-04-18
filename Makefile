@@ -8,4 +8,4 @@ publish:
 	npm publish --dry-run
 
 lint:
-	npx eslint bin/** src/**
+	npx eslint .

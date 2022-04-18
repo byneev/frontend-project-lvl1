@@ -1,7 +1,7 @@
 name: lint
 on: push
 jobs:
-  Lint javascript:
+  Lint-javascript:
     runs-on: ubuntu-latest
     steps:
       - run: make lint

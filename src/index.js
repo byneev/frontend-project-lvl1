@@ -26,7 +26,7 @@ export const getUserAnswer = (question) => readlineSync.question(`Question: ${qu
 export const getEvenQuestion = () => Math.ceil(Math.random() * 100);
 
 export const getCalcQuestion = () => {
-  const array = ['+', '-', '/', '*'];
+  const array = ['+', '-', '*'];
   const operator = getRandomElement(array);
   return `${getEvenQuestion()} ${operator} ${getEvenQuestion()}`;
 };
@@ -60,8 +60,6 @@ export const getCalcCorrectAnswer = (input) => {
       return String(+a + +b);
     case '-':
       return String(+a - +b);
-    case '/':
-      return String(Math.floor(+a / +b));
     case '*':
       return String(+a * +b);
     default:

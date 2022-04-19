@@ -91,7 +91,7 @@ export const getProgressionCorrectAnswer = (input) => {
         return String(+array[1] - delta);
       }
       if (i === array.length - 1) {
-        return String(+array[i - 2] + delta);
+        return String(+array[i - 1] + delta);
       }
       return String((+array[i - 1] + +array[i + 1]) / 2);
     }

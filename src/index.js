@@ -23,7 +23,7 @@ export const initGame = (rules) => {
 
 export const getUserAnswer = (question) => readlineSync.question(`Question: ${question}\nYour answer: `);
 
-export const getEvenQuestion = () => Math.ceil(Math.random() * 10);
+export const getEvenQuestion = () => Math.ceil(Math.random() * 100);
 
 export const getCalcQuestion = () => {
   const array = ['+', '-', '/', '*'];
@@ -31,7 +31,7 @@ export const getCalcQuestion = () => {
   return `${getEvenQuestion()} ${operator} ${getEvenQuestion()}`;
 };
 
-export const getGCDQuestion = () => `${Math.ceil(Math.random() * 10)} ${Math.ceil(Math.random() * 10)}`;
+export const getGCDQuestion = () => `${Math.ceil(Math.random() * 100)} ${Math.ceil(Math.random() * 100)}`;
 
 export const getProgressionQuestion = () => {
   let start = Math.ceil(Math.random() * 20);
@@ -48,6 +48,8 @@ export const getProgressionQuestion = () => {
   }
   return array.join(' ');
 };
+
+export const getPrimeQuestion = () => getEvenQuestion();
 
 export const getEvenCorrectAnswer = (input) => (input % 2 ? 'no' : 'yes');
 
@@ -95,6 +97,21 @@ export const getProgressionCorrectAnswer = (input) => {
     }
   }
   return 0;
+};
+
+export const getPrimeCorrectAnswer = (input) => {
+  const getPrime = (inputIn, counter) => {
+    if (counter === inputIn) {
+      return 'yes';
+    }
+    if (inputIn % counter === 0) {
+      return 'no';
+    }
+
+    return getPrime(input, counter + 1);
+  };
+
+  return getPrime(input, 2);
 };
 
 export const gameAttempt = (value, getCorrectAnswer) => {

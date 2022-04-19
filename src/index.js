@@ -61,7 +61,7 @@ export const getCalcCorrectAnswer = (input) => {
     case '-':
       return String(+a - +b);
     case '/':
-      return String(Math.ceil(+a / +b));
+      return String(Math.floor(+a / +b));
     case '*':
       return String(+a * +b);
     default:
